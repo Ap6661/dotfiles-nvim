@@ -26,7 +26,7 @@ vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 -- Terminal
-if vim.fn.has('win32') then
+if vim.fn.has('win32') == 1 then
   vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ powershell | set nonumber norelativenumber<cr>iclear<cr>', opts)
 else
   vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ $SHELL | set nonumber norelativenumber<cr>iclear<cr>', opts)
