@@ -29,7 +29,7 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 if vim.fn.has('win32') == 1 then
   vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ powershell | set nonumber norelativenumber<cr>iclear<cr>', opts)
 else
-  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ $SHELL | set nonumber norelativenumber<cr>iclear<cr>', opts)
+  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ ' .. vim.opt.shell:get() .. ' | set nonumber norelativenumber<cr>iclear<cr>', opts)
 end
 
 -- Set spell check
