@@ -1,6 +1,7 @@
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
+    enabled = vim.fn.executable('nix-shell') ~= 1, -- Only enable if no Nix
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
