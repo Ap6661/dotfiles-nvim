@@ -23,6 +23,9 @@ return {
 
     require("mini.pick").setup()
     vim.keymap.set('n', '<Leader>ff', ":Pick ", {noremap = true})
+
+    require("mini.files").setup()
+    vim.keymap.set('n', '<Leader>-', function() MiniFiles.open() end, opts)
   end,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
