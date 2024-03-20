@@ -8,6 +8,9 @@ local opts = {
 ------------
 -- Normal --
 ------------
+-- No More Help!
+vim.keymap.set('', '<F1>', '<nop>', opts)
+vim.keymap.set('i', '<F1>', '<nop>', opts)
 
 -- Better Movement
 vim.keymap.set('n', 'L', 'Lzz', opts)
