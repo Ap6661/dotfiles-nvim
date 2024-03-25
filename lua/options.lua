@@ -13,6 +13,7 @@ vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
+vim.opt.wrap = false;
 
 -- Searching
 vim.opt.incsearch = true
