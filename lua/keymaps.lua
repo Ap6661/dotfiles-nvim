@@ -35,6 +35,9 @@ else
   vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ ' .. vim.opt.shell:get() .. ' | set nonumber norelativenumber<cr>iclear<cr>', opts)
 end
 
+vim.keymap.set({'t', 'n'}, '<C-\\><C-\\>', '<C-\\><C-N>', opts)
+
+
 -- Set spell check
 vim.keymap.set('n', '<leader>ss', ':setlocal spell!<cr>', opts)
 
