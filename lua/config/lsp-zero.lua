@@ -36,6 +36,8 @@ return {
       cmp.setup({
         mapping = {
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+          ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
         }
       })
     end
