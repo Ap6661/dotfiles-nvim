@@ -26,6 +26,13 @@ return {
 
     require("mini.files").setup()
     vim.keymap.set('n', '<Leader>-', function() MiniFiles.open() end, opts)
+
+    require("mini.cursorword").setup()
+    vim.keymap.set('n', '<Leader>cw', function()
+      vim.g.minicursorword_disable = vim.g.minicursorword_disable == false
+    end, opts)
+
+    vim.g.minicursorword_disable = true
   end,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
