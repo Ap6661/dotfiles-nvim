@@ -1,7 +1,7 @@
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },             -- Required
@@ -30,15 +30,20 @@ return {
       require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
       lsp.setup()
 
-
-
       local cmp = require('cmp')
       cmp.setup({
+        source = {
+          {name = 'nvim_lsp'},
+        },
         mapping = {
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
           ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
           ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-        }
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
       })
     end
   }
