@@ -6,7 +6,7 @@ return {
   },
   config = function()
     require("lazy-lsp").setup {
-      prefer_local = false, -- Prefer locally installed servers over nix-shell
+      prefer_local = true, -- Prefer locally installed servers over nix-shell
 
       default_config = {
         flags = {
