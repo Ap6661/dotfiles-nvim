@@ -51,8 +51,8 @@ return {
     vim.keymap.set('n', '<Leader>cw', function()
       vim.g.minicursorword_disable = vim.g.minicursorword_disable == false
     end, opts)
-
     vim.g.minicursorword_disable = true
+
   end,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
