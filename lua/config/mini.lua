@@ -9,7 +9,7 @@ return {
     -- Highlight Indent Block
     require("mini.indentscope").setup()
 
-    -- A little MiniMap to over view code with <leader>m
+    -- A little MiniMap to over view code with <Leader>m
     require("mini.map").setup()
     vim.keymap.set('n', '<Leader>m', ":lua MiniMap.toggle()<CR>", opts)
 
@@ -22,15 +22,19 @@ return {
     -- Toggle a line as comments with gcc
     require("mini.comment").setup()
 
-    -- Jump anywhere with <CR>
-    require("mini.jump2d").setup()
+    -- Jump anywhere with <Leader><CR>
+    require("mini.jump2d").setup({
+      mappings = {
+        start_jumping = "<Leader><CR>",
+      },
+    })
 
     -- Picker ( help, buffer, grep, etc )
     require("mini.extra").setup()
     require("mini.pick").setup({ window = { config = { border = 'rounded' } } })
     vim.keymap.set('n', '<Leader>ff', ":Pick ", {noremap = true})
 
-    -- File Explorer
+    -- File Explorer <Leader>-
     require("mini.files").setup()
     vim.keymap.set('n', '<Leader>-', function() MiniFiles.open() end, opts)
 
@@ -42,7 +46,7 @@ return {
       end,
     })
 
-    -- Underline Cursor Word, Toggle with <leader>cw
+    -- Underline Cursor Word, Toggle with <Leader>cw
     require("mini.cursorword").setup()
     vim.keymap.set('n', '<Leader>cw', function()
       vim.g.minicursorword_disable = vim.g.minicursorword_disable == false
