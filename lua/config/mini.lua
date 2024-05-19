@@ -17,7 +17,7 @@ return {
     require("mini.tabline").setup()
 
     -- Notifications 
-    require("mini.notify").setup()
+    -- require("mini.notify").setup()
 
     -- Toggle a line as comments with gcc
     require("mini.comment").setup()
