@@ -7,7 +7,9 @@ return {
       silent = true,
     }
     -- Highlight Indent Block
-    require("mini.indentscope").setup()
+    require("mini.indentscope").setup({
+      symbol = "┊"
+    })
 
     -- A little MiniMap to over view code with <Leader>m
     require("mini.map").setup()
@@ -15,9 +17,6 @@ return {
 
     -- Tab line with buffers
     require("mini.tabline").setup()
-
-    -- Notifications 
-    -- require("mini.notify").setup()
 
     -- Toggle a line as comments with gcc
     require("mini.comment").setup()
@@ -28,7 +27,6 @@ return {
         start_jumping = "<Leader><CR>",
       },
     })
-
     -- Picker ( help, buffer, grep, etc )
     require("mini.extra").setup()
     require("mini.pick").setup({ window = { config = { border = 'rounded' } } })
