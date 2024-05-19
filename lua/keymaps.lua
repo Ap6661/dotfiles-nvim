@@ -47,7 +47,27 @@ vim.keymap.set('n', '<leader>p', '"+p', opts)
 ------------
 -- Visual --
 ------------
-
 -- Start Visual with the same area
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
+
+
+-----------
+-- Mouse --
+-----------
+-- Disable arrow keys
+for _, mode in ipairs({ 'n', 'v', 'i', 't' }) do
+  for _, dir in ipairs({ 'Up', 'Down', 'Left', 'Right' }) do
+    vim.keymap.set(mode, '<' .. dir .. '>', '<Nop>', { silent = true })
+  end
+end
+
+-- Toggle Mouse 
+vim.opt.mouse = ''
+vim.keymap.set('', '<leader><F2>', function ()
+  if vim.api.nvim_get_option("mouse") ~= "" then
+    vim.opt.mouse = ''
+  else
+    vim.opt.mouse = 'a'
+  end
+end)
