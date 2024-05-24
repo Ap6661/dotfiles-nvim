@@ -65,7 +65,7 @@ end
 -- Toggle Mouse 
 vim.opt.mouse = ''
 vim.keymap.set('', '<leader><F2>', function ()
-  if vim.api.nvim_get_option("mouse") ~= "" then
+  if vim.api.nvim_get_option_value("mouse", { scope = "global" }) ~= "" then
     vim.opt.mouse = ''
   else
     vim.opt.mouse = 'a'
