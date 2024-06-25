@@ -41,8 +41,9 @@ vim.keymap.set({'t', 'n'}, '<C-\\><C-\\>', '<C-\\><C-N>', opts)
 -- Set spell check
 vim.keymap.set('n', '<leader>ss', ':setlocal spell!<cr>', opts)
 
--- Paste from clipboard
+-- Paste and Yank from clipboard
 vim.keymap.set('n', '<leader>p', '"+p', opts)
+vim.keymap.set('n', '<leader>y', '"+y', opts)
 
 ------------
 -- Visual --
