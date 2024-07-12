@@ -58,7 +58,7 @@ vim.keymap.set('v', '>', '>gv', opts)
 -----------
 -- Disable arrow keys
 for _, mode in ipairs({ 'n', 'v', 'i' }) do
-  for _, dir in ipairs({ 'Up', 'Down', 'Left', 'Right' }) do
+  for _, dir in ipairs({ 'Up', 'Down' }) do
     vim.keymap.set(mode, '<' .. dir .. '>', '<Nop>', { silent = true })
   end
 end
