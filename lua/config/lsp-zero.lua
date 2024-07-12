@@ -18,7 +18,11 @@ return {
     config = function()
       local lsp = require('lsp-zero').preset({})
       local saga = require("lspsaga")
-      saga.setup()
+      saga.setup({
+        lightbulb = {
+          virtual_text = false,
+        }
+      })
 
 ---@diagnostic disable-next-line: unused-local
       lsp.on_attach(function(client, bufnr)
