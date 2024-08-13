@@ -9,6 +9,7 @@ return {
         "html",
         "markdown",
         "markdown_inline",
+        "latex",
         "java"
       },
       sync_install = false,
