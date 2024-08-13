@@ -11,7 +11,7 @@
         ripgrep
         fd
 
-        node
+        nodejs
         tree-sitter
 
         nvimpager
