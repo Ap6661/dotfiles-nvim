@@ -11,6 +11,8 @@
         ripgrep
         fd
 
+        tree-sitter
+
         nvimpager
     ];
 
