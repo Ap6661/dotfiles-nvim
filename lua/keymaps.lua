@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>ss', ':setlocal spell!<cr>', opts)
 
 -- Paste and Yank from clipboard
 vim.keymap.set('n', '<leader>p', '"+p', opts)
-vim.keymap.set('n', '<leader>y', '"+y', opts)
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', opts)
 
 ------------
 -- Visual --
