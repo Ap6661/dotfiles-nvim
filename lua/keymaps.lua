@@ -45,6 +45,9 @@ vim.keymap.set('n', '<leader>ss', ':setlocal spell!<cr>', opts)
 vim.keymap.set('n', '<leader>p', '"+p', opts)
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', opts)
 
+-- Delete All Buffers Except This One
+vim.keymap.set('n', '<leader>bd', ':%bd|e#|bd#<CR>', opts)
+
 ------------
 -- Visual --
 ------------
