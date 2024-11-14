@@ -15,6 +15,9 @@ return {
       inoreabbrev <expr> __
                 \ <SID>isAtStartOfLine('__') ?
                 \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+
+      let g:table_mode_corner_corner='+'
+      let g:table_mode_header_fillchar='='
     ]])
   end
 }
