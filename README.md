@@ -29,9 +29,11 @@
 
 ### autopair.lua
 
-Automatically pairs together `()`, `{}`, `[]`, `""`, `''`, and `` ` ``
+> Automatically pairs together `()`, `{}`, `[]`, `""`, `''`, and `` ` ``
 
 ### colorizer.lua
+
+
 
 ### gitgutter.lua
 
