@@ -5,22 +5,22 @@
 -- by Chris Kempson (https://github.com/chriskempson)
 -- {{scheme-name}} scheme by {{scheme-author}}
 
-local gui00 = "#0E0014"
-local gui01 = "#1A1326"
-local gui02 = "#3C2945"
-local gui03 = "#604766"
-local gui04 = "#83678A"
-local gui05 = "#AB86AD"
-local gui06 = "#D4A9D4"
-local gui07 = "#FFD6FF"
-local gui08 = "#F00000"
-local gui09 = "#EFFF75"
-local gui0A = "#ABED55"
-local gui0B = "#34F900"
-local gui0C = "#00B3C7"
-local gui0D = "#0085C7"
-local gui0E = "#BF00FB"
-local gui0F = "#753A36"
+local gui00 = "#000000"
+local gui01 = "#1a0c14"
+local gui02 = "#321c29"
+local gui03 = "#533144"
+local gui04 = "#7c4d68"
+local gui05 = "#af6e92"
+local gui06 = "#cda3b9"
+local gui07 = "#ecdfe6"
+local gui08 = "#e07d8b"
+local gui09 = "#e0957e"
+local gui0A = "#e0c87e"
+local gui0B = "#84e07e"
+local gui0C = "#7ee0d8"
+local gui0D = "#7e8ee0"
+local gui0E = "#e07ece"
+local gui0F = "#b26e44"
 
 local cterm00 = 0
 local cterm03 = 8
@@ -43,7 +43,7 @@ vim.cmd [[
   highlight clear
   syntax reset
 ]]
-vim.g.colors_name = "cee"
+vim.g.colors_name = "mine"
 
 -- Vim editor colors                    fg bg ctermfg ctermbg attr guisp
 vim.api.nvim_set_hl(0, 'Normal', { fg = gui05, bg = gui00, ctermfg = cterm05, ctermbg = cterm00 })

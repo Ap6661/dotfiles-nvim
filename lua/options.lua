@@ -12,7 +12,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
-vim.cmd 'colorscheme cee'
+vim.cmd 'colorscheme mine'
 vim.opt.colorcolumn = "80"
 vim.opt.wrap = false;
 
