@@ -23,25 +23,23 @@
 
 </details>
 
-# Plugins
+# Plugins (Lua/Config)
 
-## Lua/Config
-
-### autopair.lua
+## autopair.lua
 
 > Automatically pairs together `()`, `{}`, `[]`, `""`, `''`, and `` ` ``
 
 Toggle: `<leader><F3>`
 
-### colorizer.lua
+## colorizer.lua
 
 > Highlight occourances of colors and hex codes with that color
 
-### gitgutter.lua
+## gitgutter.lua
 
 > Show git diff markers by the number lines
 
-### harpoon.lua
+## harpoon.lua
 
 > Quickly switch between project files
 
@@ -53,13 +51,13 @@ Cycle: `<C-v>` and `<C-c>`
 
 Goto 1-3: `<leader>1` `<leader>2` `<leader>3`
 
-### lazygit.lua
+## lazygit.lua
 
 > Use the LazyGit UI
 
 Activate: `<leader><F1>`
 
-### lazylsp.lua
+## lazylsp.lua
 
 > [!IMPORTANT]
 > This is only activated if Nix is in your path
@@ -67,7 +65,7 @@ Activate: `<leader><F1>`
 > Auto install LSPs with the Nix package manager
 
 
-### lsp-zero.lua
+## lsp-zero.lua
 
 > Automatically setup lsps with LspSaga, and completion
 
@@ -91,11 +89,11 @@ show_buf_diagnostics: `[D`
 
 show_workspace_diagnostics: `]D`
 
-### lualine.lua
+## lualine.lua
 
 > Status line
 
-### mason.lua
+## mason.lua
 
 > [!IMPORTANT]
 > Only active without Nix
@@ -104,22 +102,22 @@ show_workspace_diagnostics: `]D`
 
 Menu: `:Mason`
 
-### mini.lua
+## mini.lua
 
 > Plugin suite 
 > - Test
 
-### minitator.lua
+## minitator.lua
 
-### rainbow.lua
+## rainbow.lua
 
-### tables.lua
+## tables.lua
 
-### transparent.lua
+## transparent.lua
 
-### TreeSitter.lua
+## TreeSitter.lua
 
-### windowsizing.lua
+## windowsizing.lua
 
 
 # Keymaps
