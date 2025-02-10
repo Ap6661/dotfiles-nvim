@@ -62,7 +62,7 @@ Activate: `<leader><F1>`
 ### lazylsp.lua
 
 > [!IMPORTANT]
-> THIS IS ONLY ACTIVATED IF NIX IS IN YOUR PATH
+> This is only activated if Nix is in your path
 
 > Auto install LSPs with the Nix package manager
 
@@ -98,7 +98,7 @@ show_workspace_diagnostics: `]D`
 ### mason.lua
 
 > [!IMPORTANT]
-> ONLY ACTIVE WITHOUT NIX
+> Only active without Nix
 
 > Lsp package manager
 
