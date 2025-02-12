@@ -183,20 +183,20 @@ Focus: `<leader>M`
 
 # Keymaps (lua/keymaps.lua)
 
-| Mapping      | Command                 | Explanation                                                                |
-| ---          | ---                     | ---                                                                        |
-| F1           | nop                     | Disable Help                                                               |
-| L            | Lzz                     | Scroll and Recenter                                                        |
-| H            | Hzz                     | Scroll and Recenter                                                        |
-| <C-h>        | <C-w>h                  | Quickly move to the left window                                            |
-| <C-j>        | <C-w>j                  | Quickly move to the window below                                           |
-| <C-k>        | <C-w>k                  | Quickly move to the window above                                           |
-| <C-l>        | <C-w>l                  | Quickly move to the right window                                           |
-| <C-Up        | :resize -2<CR>          | Resize the current window                                                  |
-| <C-Down      | :resize +2<CR>          | Resize the current window                                                  |
-| <C-Left      | :vertical resize -2<CR> | Resize the current window                                                  |
-| <C-Right     | :vertical resize +2<CR> | Resize the current window                                                  |
-| <leader>t    | :vert bo new +term...   | Opens up a terminal on the right                                           |
-| <C-\><C-\>   | <C-\><C-n>              | Exit terminal mode. The animations can put you into a psuedo-terminal mode |
-| <leader>ss   | :setlocal spell!<cr>    | Toggle spell checker                                                       |
-| <leader><F2> | lua function...         | Toggle mouse input                                                         |
+| Mapping        | Command                   | Explanation                                                                |
+| ---            | ---                       | ---                                                                        |
+| `F1`           | `nop`                     | Disable Help                                                               |
+| `L`            | `Lzz`                     | Scroll and Recenter                                                        |
+| `H`            | `Hzz`                     | Scroll and Recenter                                                        |
+| `<C-h>`        | `<C-w>h`                  | Quickly move to the left window                                            |
+| `<C-j>`        | `<C-w>j`                  | Quickly move to the window below                                           |
+| `<C-k>`        | `<C-w>k`                  | Quickly move to the window above                                           |
+| `<C-l>`        | `<C-w>l`                  | Quickly move to the right window                                           |
+| `<C-Up>`       | `:resize -2<CR>`          | Resize the current window                                                  |
+| `<C-Down>`     | `:resize +2<CR>`          | Resize the current window                                                  |
+| `<C-Left>`     | `:vertical resize -2<CR>` | Resize the current window                                                  |
+| `<C-Right>`    | `:vertical resize +2<CR>` | Resize the current window                                                  |
+| `<leader>t`    | `:vert bo new +term...`   | Opens up a terminal on the right                                           |
+| `<C-\><C-\>`   | `<C-\><C-n>`              | Exit terminal mode. The animations can put you into a psuedo-terminal mode |
+| `<leader>ss`   | `:setlocal spell!<cr>`    | Toggle spell checker                                                       |
+| `<leader><F2>` | `lua function...`         | Toggle mouse input                                                         |
