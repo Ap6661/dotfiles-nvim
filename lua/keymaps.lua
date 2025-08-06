@@ -4,13 +4,15 @@ local opts = {
   silent = true,
 }
 
-
 ------------
 -- Normal --
 ------------
 -- No More Help!
 vim.keymap.set('', '<F1>', '<nop>', opts)
 vim.keymap.set('i', '<F1>', '<nop>', opts)
+
+-- Reload Config
+vim.keymap.set('n', '<Leader><Leader>', ':update<CR>:source $MYVIMRC<CR>', {})
 
 -- Better Movement
 vim.keymap.set('n', 'L', 'Lzz', opts)
@@ -30,9 +32,9 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 -- Terminal
 if vim.fn.has('win32') == 1 then
-  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ powershell | set nonumber norelativenumber<cr>iclear<cr>', opts)
+  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ powershell | set nonumber norelativenumber<cr>', opts)
 else
-  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ ' .. vim.opt.shell:get() .. ' | set nonumber norelativenumber<cr>iclear<cr>', opts)
+  vim.keymap.set('n', '<Leader>t', ':vert bo new +term\\ ' .. vim.opt.shell:get() .. ' | set nonumber norelativenumber<Cr>', {})
 end
 
 vim.keymap.set({'t', 'n'}, '<C-\\><C-\\>', '<C-\\><C-N>', opts)
