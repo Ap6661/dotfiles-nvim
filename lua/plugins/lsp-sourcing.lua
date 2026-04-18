@@ -1,17 +1,20 @@
 if vim.fn.executable('nix-shell') == 1 then
-  vim.pack.add({{ src = "https://github.com/dundalek/lazy-lsp.nvim" }})
+  vim.pack.add({
+    { src = "https://github.com/dundalek/lazy-lsp.nvim" },
+    { src = "neovim/nvim-lspconfig" },
+  })
   require("lazy-lsp").setup {
       use_vim_lsp_config = true,
       prefer_local = false, -- Prefer locally installed servers over nix-shell
     }
-    vim.lsp.configs("*", -- Default
+    vim.lsp.config("*", -- Default
       {
         flags = {
           debounce_text_changes = 150,
         },
       }
     )
-    vim.lsp.configs("lua_ls",
+    vim.lsp.config("lua_ls",
       {
         settings = {
           Lua = {

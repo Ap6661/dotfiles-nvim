@@ -7,5 +7,22 @@ vim.api.nvim_create_autocmd('LSPAttach', {
     if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
-  end})
-  
+  end
+})
+
+vim.lsp.config("*", -- Default
+{
+  flags = {
+    debounce_text_changes = 150,
+  },
+})
+vim.lsp.config("lua_ls",
+{
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})

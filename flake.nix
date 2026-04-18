@@ -2,7 +2,7 @@
   description = "Home Manager configuration of Jane Doe";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
+# Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,23 +10,16 @@
     };
   };
 
-  outputs = {nixpkgs, ...}: 
-  let 
+  outputs = {self, nixpkgs, ...}: 
+    let 
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
+    lib = pkgs.lib;
 
-    config = pkgs.stdenv.mkDerivation {
-      name = "dotfiles-nvim";
-      version = "unstable";
-      src = ./.;
-      installPhase = ''
-        mkdir -p $out 
-        cp ./* $out/ -r
-      '';
-    };
+    appname = "nvim";
 
     extraPackages = with pkgs; [
-        lazygit
+      lazygit
         wget
         git
         gh
@@ -40,21 +33,40 @@
         nvimpager
     ];
 
-    nvimPath = pkgs.lib.makeBinPath extraPackages;
+    nvimPath = lib.makeBinPath extraPackages;
   in
   {
-    packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
-      pname = "my-nvim";
-      version = "unstable";
+    packages.${system} = {
 
-      extraMakeWrapperArgs = [
-      "--set" "PATH" "${nvimPath}"
+      config = pkgs.linkFarm "${appname}-config" [
+        {
+          name = appname;
+          path = lib.cleanSourceWith {
+            src = ./.;
+            filter = fpath: type: !lib.hasSuffix "init.lua" fpath;
+          };
+        }
       ];
-      luaRcContent = /* lua */ ''
-        vim.opt.runtimepath:prepend("${config}")
-        vim.env.PATH = "${nvimPath}:" .. (vim.env.PATH or "")
-        dofile("${config}/init.lua")
-      '';
+
+
+        default = 
+        let 
+          config = self.packages.${system}.config;
+        in
+          pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped 
+        {
+
+        luaRcContent = builtins.readFile ./init.lua;
+        wrapRc = true;
+
+        pname = "my-nvim";
+        version = "unstable";
+        wrapperArgs = [
+        "--set" "NVIM_APPNAME" "${appname}"
+        "--prefix" "PATH" ":" "${nvimPath}"
+        "--prefix" "XDG_CONFIG_DIRS" ":" "${config}"
+        ];
+      };
     };
 
     # nixosModules = {
