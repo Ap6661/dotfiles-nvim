@@ -40,12 +40,14 @@ require("mini.extra").setup()
 require("mini.pick").setup({ window = { config = win_config }})
 vim.keymap.set('n', '<Leader>f', ":Pick ", {noremap = true})
 vim.keymap.set('n', '<Leader>ff', ":Pick files<CR>", {noremap = true})
+vim.keymap.set('n', '<Leader>fg', ":Pick grep<CR>", {noremap = true})
 vim.keymap.set('n', '<Leader>fh', ":Pick help<CR>", {noremap = true})
 vim.keymap.set('n', '<Leader>fb', ":Pick buffers<CR>", {noremap = true})
 
 
 -- File Explorer <Leader>-
 require("mini.files").setup()
+---@diagnostic disable-next-line
 vim.keymap.set('n', '<Leader>-', function() MiniFiles.open() end, opts)
 
 vim.api.nvim_create_autocmd('User', {
@@ -63,4 +65,14 @@ vim.keymap.set('n', '<Leader>cw', function()
 end, opts)
 vim.g.minicursorword_disable = true
 
+require("mini.completion").setup({
+  window = {
+    info = {
+      border = "rounded",
+    },
+    signature = {
+      border = "rounded",
+    }
+  },
+})
 
