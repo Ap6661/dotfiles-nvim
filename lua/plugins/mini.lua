@@ -46,7 +46,11 @@ vim.keymap.set('n', '<Leader>fb', ":Pick buffers<CR>", {noremap = true})
 
 
 -- File Explorer <Leader>-
-require("mini.files").setup()
+require("mini.files").setup({
+    options = {
+      use_as_default_explorer = false,
+    },
+})
 ---@diagnostic disable-next-line
 vim.keymap.set('n', '<Leader>-', function() MiniFiles.open() end, opts)
 
