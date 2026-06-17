@@ -14,7 +14,7 @@
 - tree-sitter
     - nodejs
 
-- Neovim (0.10+)
+- Neovim (0.12+)
 
 - Nerd Font
 
@@ -39,17 +39,17 @@ Toggle: `<leader><F3>`
 
 > Show git diff markers by the number lines
 
-## harpoon.lua
-
-> Quickly switch between project files
-
-Open UI: `<leader>]`
-
-Mark File: `<leader><Tab>`
-
-Cycle: `<C-v>` and `<C-c>`
-
-Goto 1-3: `<leader>1` `<leader>2` `<leader>3`
+<!-- ## harpoon.lua -->
+<!---->
+<!-- > Quickly switch between project files -->
+<!---->
+<!-- Open UI: `<leader>]` -->
+<!---->
+<!-- Mark File: `<leader><Tab>` -->
+<!---->
+<!-- Cycle: `<C-v>` and `<C-c>` -->
+<!---->
+<!-- Goto 1-3: `<leader>1` `<leader>2` `<leader>3` -->
 
 ## lazygit.lua
 
@@ -57,15 +57,13 @@ Goto 1-3: `<leader>1` `<leader>2` `<leader>3`
 
 Activate: `<leader><F1>`
 
-## lazylsp.lua
+## lsp-sourcing.lua
 
-> [!IMPORTANT]
-> This is only activated if Nix is in your path
+> Auto install LSPs with the Nix package manager if Nix is installed
 
-> Auto install LSPs with the Nix package manager
+Manual (no nix): `:mason`
 
-
-## lsp-zero.lua
+## lsp-config.lua
 
 > Automatically setup lsps with LspSaga, and completion
 
@@ -162,18 +160,21 @@ Toggle Table Mode: `<leader>tm`
 
 Toggle: `<leader>o`
 
-## TreeSitter.lua
+## ts-sourcing.lua
 
 > Better syntax highlighting based on languages
 
-> Installed by default
-> - lua
-> - vim
-> - html
-> - markdown
->   - markdown_inline
-> - latex
-> - java
+> Manages installing parsers
+
+Defaults: 
+
+- C
+- Lua
+- Markdown
+- Vimscript
+- Vimdoc
+- Nix 
+- Bash
 
 ## windowsizing.lua
 
