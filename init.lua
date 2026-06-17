@@ -10,3 +10,8 @@ for _, file in ipairs(vim.fn.readdir(plugin_dir, [[v:val =~ '\.lua$']])) do
   require('plugins.'..file:gsub('%.lua$', ''))
 end
 
+local extra = vim.fs.normalize("~/.config/nvim/init.lua")
+if vim.fn.filereadable(extra) == 1 then
+  vim.cmd("luafile " .. extra)
+end
+
