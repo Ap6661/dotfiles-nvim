@@ -75,3 +75,23 @@ vim.keymap.set('', '<leader><F2>', function ()
     vim.opt.mouse = 'a'
   end
 end)
+
+
+------------
+-- Insert -- 
+------------
+
+-- Pop-up Menu Keybinds
+for _, i in pairs({
+  { key = '<Tab>'    , map = '<Down>' },
+  { key = '<S-Tab>'  , map = '<Up>'   },
+  { key = '<CR>'     , map = '<C-y>'  },
+  { key = '<S-Esc>'  , map = '<C-e>'  },
+}) do
+vim.keymap.set('i', i.key, function()
+  return vim.fn.pumvisible() == 1 and i.map or i.key
+end, {
+noremap = true,
+expr = true
+})
+end
