@@ -29,8 +29,6 @@
 
         nodejs
         tree-sitter
-
-        nvimpager
     ];
 
     nvimPath = lib.makeBinPath extraPackages;
@@ -69,8 +67,23 @@
       };
     };
 
-    # nixosModules = {
-    #   nvim = import ./nvim.nix;
-    # };
+    nixosModules = {
+      nvim = { ... }: {
+        environment = {
+          systemPackages = with pkgs; [
+              self.packages.${system}.default
+              nvimpager
+          ];
+
+          variables = { 
+            EDITOR = "nvim"; 
+            VISUAL = "nvim"; 
+            PAGER = "nvimpager";
+          };
+        };
+
+
+      };
+    };
   };
 }
