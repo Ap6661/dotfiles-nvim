@@ -73,7 +73,7 @@
           systemPackages = with pkgs; [
               self.packages.${system}.default
               nvimpager
-          ];
+          ] ++ extraPackages;
 
           variables = { 
             EDITOR = "nvim"; 
