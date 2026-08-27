@@ -61,6 +61,9 @@ Activate: `<leader><F1>`
 
 > Auto install LSPs with the Nix package manager if Nix is installed
 
+> [!IMPORTANT]
+> With ccls languages you need a `.ccls` file in the root
+
 Manual (no nix): `:mason`
 
 ## lsp-config.lua

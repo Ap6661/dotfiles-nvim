@@ -7,7 +7,16 @@ if vim.fn.executable('nix-shell') == 1 then
       use_vim_lsp_config = true,
       prefer_local = false, -- Prefer locally installed servers over nix-shell
 
-      prefered_servers = { "nixd" },
+      excluded_servers = {
+        "clangd",
+        "sourcekit"
+      },
+
+      preferred_servers = {
+        nix = { "nixd" },
+        c = { "ccls" },
+        cpp = { "ccls" },
+      },
     }
 else
   vim.pack.add({
