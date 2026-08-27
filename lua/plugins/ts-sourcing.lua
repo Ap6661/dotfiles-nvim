@@ -4,4 +4,4 @@ vim.pack.add({
 
 require("tree-sitter-manager").setup()
 
-vim.cmd "TSInstall bash nix lua"
+vim.cmd "TSInstall bash nix lua markdown markdown_inline python r"

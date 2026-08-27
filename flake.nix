@@ -18,6 +18,13 @@
 
     appname = "nvim";
 
+    quartoPatched = pkgs.quarto.overrideAttrs (oldAttrs: { # Remove this overrideAttrs patch when fixed. See https://github.com/NixOS/nixpkgs/issues/519484#issuecomment-4667477454
+        postPatch = (oldAttrs.postPatch or "") + ''
+        substituteInPlace bin/quarto.js \
+        --replace-fail "syntax-highlighting" "highlight-style"
+        '';
+        });
+
     extraPackages = with pkgs; [
       lazygit
         wget
@@ -29,9 +36,23 @@
 
         nodejs
         tree-sitter
+        quartoPatched
     ];
 
     nvimPath = lib.makeBinPath extraPackages;
+
+    nvVersion = "0.12.5";
+
+    nvUnwrapped = pkgs.neovim-unwrapped.overrideAttrs {
+      version = nvVersion;
+
+      src = pkgs.fetchFromGitHub {
+        owner = "neovim";
+        repo = "neovim";
+        tag = "v${nvVersion}";
+        hash = "sha256-dpu2kncpm+2k+XR7qOEi4KeEy9a1E6X7kjf3s4AbcSo=";
+      };
+    };
   in
   {
     packages.${system} = {
@@ -51,11 +72,17 @@
         let 
           config = self.packages.${system}.config;
         in
-          pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped 
+          pkgs.wrapNeovimUnstable nvUnwrapped
         {
 
         luaRcContent = builtins.readFile ./init.lua;
         wrapRc = true;
+
+        withPython3 = true;
+        extraPython3Packages = ps: with ps; [
+          pynvim
+          jupyter-client
+        ];
 
         pname = "my-nvim";
         version = "unstable";
