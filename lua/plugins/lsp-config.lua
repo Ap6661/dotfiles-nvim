@@ -57,16 +57,22 @@ local saga = require("lspsaga")
 saga.setup({
   lightbulb = {
     virtual_text = false,
+  },
+  hover = {
+      max_width = 0.8,
+      max_height = 0.5,
   }
 })
 
--- vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {buffer = bufnr})
--- vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<cr>', {buffer = bufnr})
--- vim.keymap.set('n', 'go', '<cmd>Lspsaga peek_type_definition<cr>', {buffer = bufnr})
--- vim.keymap.set('n', '<F2>', '<cmd>Lspsaga rename<cr>', {buffer = bufnr})
--- vim.keymap.set('n', '<F4>', '<cmd>Lspsaga code_action<cr>', {buffer = bufnr})
--- vim.keymap.set('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<cr>', {buffer = bufnr})
--- vim.keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', {buffer = bufnr})
--- vim.keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>', {buffer = bufnr})
--- vim.keymap.set('n', '[D', '<cmd>Lspsaga show_buf_diagnostics<cr>', {buffer = bufnr})
--- vim.keymap.set('n', ']D', '<cmd>Lspsaga show_workspace_diagnostics<cr>', {buffer = bufnr})
+local bufnr=bufnr
+
+vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {buffer = bufnr})
+vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<cr>', {buffer = bufnr})
+vim.keymap.set('n', 'go', '<cmd>Lspsaga peek_type_definition<cr>', {buffer = bufnr})
+vim.keymap.set('n', '<F2>', '<cmd>Lspsaga rename<cr>', {buffer = bufnr})
+vim.keymap.set('n', '<F4>', '<cmd>Lspsaga code_action<cr>', {buffer = bufnr})
+vim.keymap.set('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<cr>', {buffer = bufnr})
+vim.keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', {buffer = bufnr})
+vim.keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>', {buffer = bufnr})
+vim.keymap.set('n', '[D', '<cmd>Lspsaga show_buf_diagnostics<cr>', {buffer = bufnr})
+vim.keymap.set('n', ']D', '<cmd>Lspsaga show_workspace_diagnostics<cr>', {buffer = bufnr})
