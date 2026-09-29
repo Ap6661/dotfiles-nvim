@@ -43,3 +43,21 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+local cycle = require('utils.cycle')
+
+vim.keymap.set('n', '<leader><f4>', cycle.new(
+  {
+    function ()
+      require('lualine').hide({unhide=false})
+      vim.cmd ':set statusline=\\ '
+    end,
+    function ()
+      require('lualine').hide({unhide=true})
+      vim.cmd ':set statusline&'
+    end,
+  }),
+  {
+    desc = "Toggle Statusbar"
+  }
+)
