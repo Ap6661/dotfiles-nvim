@@ -4,6 +4,7 @@ vim.g.molten_auto_open_output = false
 vim.g.molten_virt_text_output = true
 vim.g.molten_tick_rate = 200
 vim.g.molten_wrap_output = false
+vim.g.molten_image_provider = "image.nvim"
 
 local function project_kernel_names()
   local jp = os.getenv("JUPYTER_PATH")
@@ -51,3 +52,16 @@ vim.keymap.set("n", "<localleader>oh", ":MoltenHideOutput<CR>", { desc = "hide o
 vim.keymap.set("n", "<localleader>os", ":noautocmd MoltenEnterOutput<CR>", { desc = "show/enter output", silent = true })
 vim.keymap.set("n", "<localleader>oi", ":MoltenInterrupt<CR>", { desc = "interrupt kernel", silent = true })
 vim.keymap.set("n", "<localleader>rs", ":MoltenRestart<CR>", { desc = "restart kernel", silent = true })
+
+vim.pack.add({ { src = "https://github.com/3rd/image.nvim" } })
+
+require('image').setup({
+  backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+  integrations = {}, -- do whatever you want with image.nvim's integrations
+  max_width = 100, -- tweak to preference
+  max_height = 12, -- ^
+  max_height_window_percentage = math.huge, -- this is necessary for a good experience
+  max_width_window_percentage = math.huge,
+  window_overlap_clear_enabled = true,
+  window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+})
