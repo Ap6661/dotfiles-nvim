@@ -23,14 +23,14 @@ vim.keymap.set('i', i.key, function()
   end
 
   if prev.callback then
-    return prev.callback()
+    return vim.api.nvim_replace_termcodes(prev.callback(), true, false, true)
   end
 
   if prev.rhs and prev.rhs ~= "" then
     return vim.fn.eval(prev.rhs)
   end
 
-  return vim.fn.eval(i.key)
+  return vim.api.nvim_replace_termcodes(i.key, true, false, true)
 end, {
 noremap = true,
 expr = true,
