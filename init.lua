@@ -15,3 +15,4 @@ if vim.fn.filereadable(extra) == 1 then
   vim.cmd("luafile " .. extra)
 end
 
+require('post')
