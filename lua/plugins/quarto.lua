@@ -41,5 +41,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<localleader>qp", quarto.quartoPreview, { buffer = b, desc = "quarto preview", silent = true })
     vim.keymap.set("n", "<localleader>qc", quarto.quartoClosePreview, { buffer = b, desc = "close preview", silent = true })
     vim.keymap.set("n", "<localleader>qr", ":!quarto render %<CR>", { buffer = b, desc = "render document", silent = true })
+
+    vim.keymap.set("n", "<localleader>qs",
+    require('utils.cycle').new({
+      function ()
+        vim.o.syntax=''
+        vim.treesitter.start()
+      end,
+      function ()
+        vim.o.syntax='quarto'
+        vim.treesitter.start()
+      end
+    }), { buffer = b, desc = "toggle quarto treesitter", silent = true })
   end,
 })
