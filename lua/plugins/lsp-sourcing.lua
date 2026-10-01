@@ -9,7 +9,8 @@ if vim.fn.executable('nix-shell') == 1 then
 
       excluded_servers = {
         "clangd",
-        "sourcekit"
+        "sourcekit",
+        "pylyzer"
       },
 
       preferred_servers = {
@@ -17,6 +18,12 @@ if vim.fn.executable('nix-shell') == 1 then
         c = { "ccls" },
         cpp = { "ccls" },
       },
+
+      configs = {
+        r_language_server = {
+          filetypes = { 'r' }
+        }
+      }
     }
 else
   vim.pack.add({

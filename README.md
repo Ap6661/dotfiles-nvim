@@ -292,16 +292,6 @@ python -m ipykernel install --user --name <project-name>
 
 Launch nvim from the activated environment; `<localleader>mi` connects to `<project-name>` via `VIRTUAL_ENV`.
 
-## R
-
-Add R with `IRkernel` to the project's dev shell (e.g. `pkgs.rWrapper` / `rPackages.IRkernel`) and register the kernelspec once:
-
-```r
-IRkernel::installspec()
-```
-
-Then use `<localleader>mi` and pick `ir`, or `:MoltenInit ir`. R packages resolve from the project R library path.
-
 ## Quarto
 
 - Cells in `.qmd` files run through the same Molten kernels with the `<localleader>r*` mappings above.
